@@ -1,0 +1,1844 @@
+{
+ "generatedAt": "2026-10-31T09:23:17.220Z",
+ "isSample": false,
+ "label": "MODEL ESTIMATE",
+ "sources": {
+  "geometry": "NYC Dept. of City Planning — 2020 Public Use Microdata Areas (PUMAs)",
+  "acs": "U.S. Census Bureau, ACS 2024 5-year (via Census Reporter API)",
+  "ami": "NY DPS Energy Affordability Program income table (Con Edison), as of 10/15/26",
+  "enrollment": "Con Edison: ~500,000 EAP customers enrolled in 2025 [Brief ref 1, 3]; 20,000+ EEAP applications by July 2026 [ref 3, 4]"
+ },
+ "assumptions": {
+  "nycShareOfConEd": 0.899,
+  "enrolledEapNyc": 449705,
+  "enrolledEeapNyc": 17988,
+  "rawEligibleAcs": 2341386,
+  "officialEligibleNyc": 989351,
+  "calibration": 0.423,
+  "note": "Raw eligible = households with income below the AMI limit for the PUMA's average household size (linear interpolation inside ACS B19001 brackets). Because many renters (e.g. master-metered buildings) are not direct Con Edison customers, raw counts are scaled so the NYC total equals the utility's figure (≈500k EAP enrolled + ≈600k EEAP potentially eligible, × NYC share). EAP enrollment is allocated to PUMAs in proportion to SNAP households (B22003); EEAP in proportion to eligible non-SNAP households. Con Edison totals are scaled to NYC by household share vs. Westchester. Gap = eligible − allocated enrolled. Energy burden is an ACS-derived proxy (B25132/B25133 cost midpoints ÷ median income), not the DOE LEAD Tool.",
+  "priority": "Priority = 100 × (0.40·gap + 0.30·energy burden + 0.15·non-English share + 0.15·renter share), each min–max normalized across the 55 PUMAs."
+ },
+ "totals": {
+  "households": 3334088,
+  "eligible": 989349,
+  "enrolledEstimate": 467692,
+  "gap": 521653
+ },
+ "areas": [
+  {
+   "puma": "04103",
+   "name": "Manhattan Community District 3--Lower East Side & Chinatown",
+   "borough": "manhattan",
+   "households": 73868,
+   "avgHouseholdSize": 1.97,
+   "amiLimitUsed": 129114,
+   "eligible": 22291,
+   "snapHouseholds": 19576,
+   "renterShare": 0.8286,
+   "nonEnglishShare": 0.4343,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.198
+    },
+    {
+     "label": "Spanish",
+     "share": 0.157
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.018
+    }
+   ],
+   "medianIncome": 59411,
+   "annualEnergyCost": 1617,
+   "energyBurden": 0.0272,
+   "eligibleRawAcs": 52752,
+   "enrolledEstimate": 12618,
+   "gap": 9673,
+   "priority": 42
+  },
+  {
+   "puma": "04104",
+   "name": "Manhattan Community District 4--Chelsea & Hell's Kitchen",
+   "borough": "manhattan",
+   "households": 68730,
+   "avgHouseholdSize": 1.65,
+   "amiLimitUsed": 123930,
+   "eligible": 15182,
+   "snapHouseholds": 6645,
+   "renterShare": 0.7904,
+   "nonEnglishShare": 0.3123,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.121
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.055
+    },
+    {
+     "label": "Chinese",
+     "share": 0.047
+    }
+   ],
+   "medianIncome": 116564,
+   "annualEnergyCost": 1683,
+   "energyBurden": 0.0144,
+   "eligibleRawAcs": 35929,
+   "enrolledEstimate": 4713,
+   "gap": 10469,
+   "priority": 34
+  },
+  {
+   "puma": "04107",
+   "name": "Manhattan Community District 7--Upper West Side",
+   "borough": "manhattan",
+   "households": 108667,
+   "avgHouseholdSize": 1.97,
+   "amiLimitUsed": 129114,
+   "eligible": 21372,
+   "snapHouseholds": 7035,
+   "renterShare": 0.6469,
+   "nonEnglishShare": 0.2967,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.115
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.039
+    },
+    {
+     "label": "Chinese",
+     "share": 0.035
+    }
+   ],
+   "medianIncome": 147384,
+   "annualEnergyCost": 1897,
+   "energyBurden": 0.0129,
+   "eligibleRawAcs": 50579,
+   "enrolledEstimate": 5288,
+   "gap": 16084,
+   "priority": 42
+  },
+  {
+   "puma": "04108",
+   "name": "Manhattan Community District 8--Upper East Side & Roosevelt Island",
+   "borough": "manhattan",
+   "households": 110965,
+   "avgHouseholdSize": 1.88,
+   "amiLimitUsed": 127656,
+   "eligible": 20302,
+   "snapHouseholds": 4974,
+   "renterShare": 0.6286,
+   "nonEnglishShare": 0.2645,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.066
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.055
+    },
+    {
+     "label": "Chinese",
+     "share": 0.029
+    }
+   ],
+   "medianIncome": 154152,
+   "annualEnergyCost": 1837,
+   "energyBurden": 0.0119,
+   "eligibleRawAcs": 48046,
+   "enrolledEstimate": 4032,
+   "gap": 16270,
+   "priority": 41
+  },
+  {
+   "puma": "04109",
+   "name": "Manhattan Community District 9--Morningside Heights & Hamilton Heights",
+   "borough": "manhattan",
+   "households": 41053,
+   "avgHouseholdSize": 2.41,
+   "amiLimitUsed": 136242,
+   "eligible": 13253,
+   "snapHouseholds": 9603,
+   "renterShare": 0.8373,
+   "nonEnglishShare": 0.4755,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.309
+    },
+    {
+     "label": "Chinese",
+     "share": 0.036
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.031
+    }
+   ],
+   "medianIncome": 63429,
+   "annualEnergyCost": 1918,
+   "energyBurden": 0.0302,
+   "eligibleRawAcs": 31364,
+   "enrolledEstimate": 6320,
+   "gap": 6933,
+   "priority": 39
+  },
+  {
+   "puma": "04110",
+   "name": "Manhattan Community District 10--Harlem",
+   "borough": "manhattan",
+   "households": 58715,
+   "avgHouseholdSize": 2.23,
+   "amiLimitUsed": 133326,
+   "eligible": 19257,
+   "snapHouseholds": 15518,
+   "renterShare": 0.836,
+   "nonEnglishShare": 0.3353,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.197
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.057
+    },
+    {
+     "label": "Other",
+     "share": 0.035
+    }
+   ],
+   "medianIncome": 57391,
+   "annualEnergyCost": 1897,
+   "energyBurden": 0.0331,
+   "eligibleRawAcs": 45574,
+   "enrolledEstimate": 10092,
+   "gap": 9166,
+   "priority": 42
+  },
+  {
+   "puma": "04111",
+   "name": "Manhattan Community District 11--East Harlem",
+   "borough": "manhattan",
+   "households": 55101,
+   "avgHouseholdSize": 2.17,
+   "amiLimitUsed": 132354,
+   "eligible": 19318,
+   "snapHouseholds": 18118,
+   "renterShare": 0.9138,
+   "nonEnglishShare": 0.4742,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.324
+    },
+    {
+     "label": "Chinese",
+     "share": 0.048
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.025
+    }
+   ],
+   "medianIncome": 42218,
+   "annualEnergyCost": 1865,
+   "energyBurden": 0.0442,
+   "eligibleRawAcs": 45718,
+   "enrolledEstimate": 11604,
+   "gap": 7714,
+   "priority": 49
+  },
+  {
+   "puma": "04112",
+   "name": "Manhattan Community District 12--Washington Heights & Inwood",
+   "borough": "manhattan",
+   "households": 75402,
+   "avgHouseholdSize": 2.57,
+   "amiLimitUsed": 138834,
+   "eligible": 25515,
+   "snapHouseholds": 22798,
+   "renterShare": 0.8731,
+   "nonEnglishShare": 0.6425,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.568
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.018
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.015
+    }
+   ],
+   "medianIncome": 64925,
+   "annualEnergyCost": 1929,
+   "energyBurden": 0.0297,
+   "eligibleRawAcs": 60384,
+   "enrolledEstimate": 14669,
+   "gap": 10846,
+   "priority": 52
+  },
+  {
+   "puma": "04121",
+   "name": "Manhattan Community Districts 1 & 2--Financial District & Greenwich Village",
+   "borough": "manhattan",
+   "households": 78563,
+   "avgHouseholdSize": 1.85,
+   "amiLimitUsed": 127170,
+   "eligible": 12391,
+   "snapHouseholds": 2637,
+   "renterShare": 0.6855,
+   "nonEnglishShare": 0.2442,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.064
+    },
+    {
+     "label": "Spanish",
+     "share": 0.053
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.047
+    }
+   ],
+   "medianIncome": 183457,
+   "annualEnergyCost": 1879,
+   "energyBurden": 0.0102,
+   "eligibleRawAcs": 29324,
+   "enrolledEstimate": 2229,
+   "gap": 10161,
+   "priority": 27
+  },
+  {
+   "puma": "04165",
+   "name": "Manhattan Community Districts 5 & 6--Midtown, East Midtown, & Flatiron",
+   "borough": "manhattan",
+   "households": 107217,
+   "avgHouseholdSize": 1.72,
+   "amiLimitUsed": 125064,
+   "eligible": 19231,
+   "snapHouseholds": 5235,
+   "renterShare": 0.6922,
+   "nonEnglishShare": 0.2678,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.064
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.052
+    },
+    {
+     "label": "Chinese",
+     "share": 0.046
+    }
+   ],
+   "medianIncome": 154348,
+   "annualEnergyCost": 1694,
+   "energyBurden": 0.011,
+   "eligibleRawAcs": 45511,
+   "enrolledEstimate": 4123,
+   "gap": 15108,
+   "priority": 39
+  },
+  {
+   "puma": "04204",
+   "name": "Bronx Community District 4--Highbridge & Concourse",
+   "borough": "bronx",
+   "households": 56787,
+   "avgHouseholdSize": 2.5,
+   "amiLimitUsed": 137700,
+   "eligible": 21737,
+   "snapHouseholds": 26247,
+   "renterShare": 0.9208,
+   "nonEnglishShare": 0.6264,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.513
+    },
+    {
+     "label": "Other",
+     "share": 0.063
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.029
+    }
+   ],
+   "medianIncome": 44672,
+   "annualEnergyCost": 2214,
+   "energyBurden": 0.0496,
+   "eligibleRawAcs": 51444,
+   "enrolledEstimate": 16712,
+   "gap": 5025,
+   "priority": 50
+  },
+  {
+   "puma": "04205",
+   "name": "Bronx Community District 5--Morris Heights & Mount Hope",
+   "borough": "bronx",
+   "households": 47289,
+   "avgHouseholdSize": 2.67,
+   "amiLimitUsed": 140454,
+   "eligible": 18557,
+   "snapHouseholds": 24762,
+   "renterShare": 0.9555,
+   "nonEnglishShare": 0.6925,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.591
+    },
+    {
+     "label": "Other",
+     "share": 0.076
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.016
+    }
+   ],
+   "medianIncome": 36633,
+   "annualEnergyCost": 2203,
+   "energyBurden": 0.0601,
+   "eligibleRawAcs": 43917,
+   "enrolledEstimate": 15766,
+   "gap": 2791,
+   "priority": 52
+  },
+  {
+   "puma": "04207",
+   "name": "Bronx Community District 7--Fordham, Bedford Park, & Norwood",
+   "borough": "bronx",
+   "households": 50347,
+   "avgHouseholdSize": 2.46,
+   "amiLimitUsed": 137052,
+   "eligible": 19298,
+   "snapHouseholds": 20467,
+   "renterShare": 0.9316,
+   "nonEnglishShare": 0.7496,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.652
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.046
+    },
+    {
+     "label": "Other",
+     "share": 0.02
+    }
+   ],
+   "medianIncome": 44354,
+   "annualEnergyCost": 2110,
+   "energyBurden": 0.0476,
+   "eligibleRawAcs": 45671,
+   "enrolledEstimate": 13032,
+   "gap": 6266,
+   "priority": 55
+  },
+  {
+   "puma": "04208",
+   "name": "Bronx Community District 8--Riverdale, Kingsbridge, & Marble Hill",
+   "borough": "bronx",
+   "households": 40748,
+   "avgHouseholdSize": 2.25,
+   "amiLimitUsed": 133650,
+   "eligible": 12145,
+   "snapHouseholds": 7217,
+   "renterShare": 0.5973,
+   "nonEnglishShare": 0.5029,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.36
+    },
+    {
+     "label": "Other",
+     "share": 0.041
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.029
+    }
+   ],
+   "medianIncome": 80479,
+   "annualEnergyCost": 2070,
+   "energyBurden": 0.0257,
+   "eligibleRawAcs": 28742,
+   "enrolledEstimate": 4873,
+   "gap": 7272,
+   "priority": 33
+  },
+  {
+   "puma": "04209",
+   "name": "Bronx Community District 9--Soundview & Parkchester",
+   "borough": "bronx",
+   "households": 63394,
+   "avgHouseholdSize": 2.62,
+   "amiLimitUsed": 139644,
+   "eligible": 23369,
+   "snapHouseholds": 21425,
+   "renterShare": 0.7719,
+   "nonEnglishShare": 0.5938,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.458
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.083
+    },
+    {
+     "label": "Other",
+     "share": 0.023
+    }
+   ],
+   "medianIncome": 48762,
+   "annualEnergyCost": 2348,
+   "energyBurden": 0.0481,
+   "eligibleRawAcs": 55306,
+   "enrolledEstimate": 13751,
+   "gap": 9618,
+   "priority": 55
+  },
+  {
+   "puma": "04210",
+   "name": "Bronx Community District 10--Co-op City & Throgs Neck",
+   "borough": "bronx",
+   "households": 50776,
+   "avgHouseholdSize": 2.44,
+   "amiLimitUsed": 136728,
+   "eligible": 16805,
+   "snapHouseholds": 9615,
+   "renterShare": 0.5637,
+   "nonEnglishShare": 0.4619,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.31
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.077
+    },
+    {
+     "label": "Other",
+     "share": 0.027
+    }
+   ],
+   "medianIncome": 69626,
+   "annualEnergyCost": 2915,
+   "energyBurden": 0.0419,
+   "eligibleRawAcs": 39770,
+   "enrolledEstimate": 6528,
+   "gap": 10277,
+   "priority": 46
+  },
+  {
+   "puma": "04211",
+   "name": "Bronx Community District 11--Pelham Parkway & Morris Park",
+   "borough": "bronx",
+   "households": 42901,
+   "avgHouseholdSize": 2.56,
+   "amiLimitUsed": 138672,
+   "eligible": 14782,
+   "snapHouseholds": 11821,
+   "renterShare": 0.7002,
+   "nonEnglishShare": 0.5628,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.353
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.087
+    },
+    {
+     "label": "Arabic",
+     "share": 0.028
+    }
+   ],
+   "medianIncome": 64010,
+   "annualEnergyCost": 2614,
+   "energyBurden": 0.0408,
+   "eligibleRawAcs": 34983,
+   "enrolledEstimate": 7694,
+   "gap": 7088,
+   "priority": 44
+  },
+  {
+   "puma": "04212",
+   "name": "Bronx Community District 12--Wakefield, Williamsbridge, & Eastchester",
+   "borough": "bronx",
+   "households": 57533,
+   "avgHouseholdSize": 2.7,
+   "amiLimitUsed": 140940,
+   "eligible": 19365,
+   "snapHouseholds": 16525,
+   "renterShare": 0.6042,
+   "nonEnglishShare": 0.3256,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.214
+    },
+    {
+     "label": "Other",
+     "share": 0.058
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.029
+    }
+   ],
+   "medianIncome": 67446,
+   "annualEnergyCost": 2922,
+   "energyBurden": 0.0433,
+   "eligibleRawAcs": 45830,
+   "enrolledEstimate": 10682,
+   "gap": 8683,
+   "priority": 41
+  },
+  {
+   "puma": "04221",
+   "name": "Bronx Community Districts 1 & 2--Melrose, Mott Haven, Longwood, & Hunts Point",
+   "borough": "bronx",
+   "households": 57981,
+   "avgHouseholdSize": 2.52,
+   "amiLimitUsed": 138024,
+   "eligible": 22491,
+   "snapHouseholds": 31253,
+   "renterShare": 0.9211,
+   "nonEnglishShare": 0.6369,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.569
+    },
+    {
+     "label": "Other",
+     "share": 0.033
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.023
+    }
+   ],
+   "medianIncome": 31872,
+   "annualEnergyCost": 2211,
+   "energyBurden": 0.0694,
+   "eligibleRawAcs": 53228,
+   "enrolledEstimate": 19899,
+   "gap": 2592,
+   "priority": 55
+  },
+  {
+   "puma": "04263",
+   "name": "Bronx Community Districts 3 & 6--Morrisania, Tremont, Belmont, & West Farms",
+   "borough": "bronx",
+   "households": 66344,
+   "avgHouseholdSize": 2.51,
+   "amiLimitUsed": 137862,
+   "eligible": 26142,
+   "snapHouseholds": 36943,
+   "renterShare": 0.9412,
+   "nonEnglishShare": 0.5657,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.47
+    },
+    {
+     "label": "Other",
+     "share": 0.061
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.02
+    }
+   ],
+   "medianIncome": 33377,
+   "annualEnergyCost": 2105,
+   "energyBurden": 0.0631,
+   "eligibleRawAcs": 61868,
+   "enrolledEstimate": 23522,
+   "gap": 2620,
+   "priority": 50
+  },
+  {
+   "puma": "04301",
+   "name": "Brooklyn Community District 1--Williamsburg & Greenpoint",
+   "borough": "brooklyn",
+   "households": 85708,
+   "avgHouseholdSize": 2.4,
+   "amiLimitUsed": 136080,
+   "eligible": 21400,
+   "snapHouseholds": 17626,
+   "renterShare": 0.8379,
+   "nonEnglishShare": 0.4781,
+   "topLanguages": [
+    {
+     "label": "German / West Germanic (incl. Yiddish)",
+     "share": 0.173
+    },
+    {
+     "label": "Spanish",
+     "share": 0.161
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.042
+    }
+   ],
+   "medianIncome": 104479,
+   "annualEnergyCost": 2202,
+   "energyBurden": 0.0211,
+   "eligibleRawAcs": 50644,
+   "enrolledEstimate": 11436,
+   "gap": 9964,
+   "priority": 41
+  },
+  {
+   "puma": "04302",
+   "name": "Brooklyn Community District 2--Downtown Brooklyn & Fort Greene",
+   "borough": "brooklyn",
+   "households": 61250,
+   "avgHouseholdSize": 1.98,
+   "amiLimitUsed": 129276,
+   "eligible": 11778,
+   "snapHouseholds": 6699,
+   "renterShare": 0.6807,
+   "nonEnglishShare": 0.2697,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.101
+    },
+    {
+     "label": "Chinese",
+     "share": 0.048
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.03
+    }
+   ],
+   "medianIncome": 146067,
+   "annualEnergyCost": 1963,
+   "energyBurden": 0.0134,
+   "eligibleRawAcs": 27873,
+   "enrolledEstimate": 4552,
+   "gap": 7226,
+   "priority": 23
+  },
+  {
+   "puma": "04303",
+   "name": "Brooklyn Community District 3--Bedford-Stuyvesant",
+   "borough": "brooklyn",
+   "households": 71580,
+   "avgHouseholdSize": 2.51,
+   "amiLimitUsed": 137862,
+   "eligible": 21188,
+   "snapHouseholds": 18093,
+   "renterShare": 0.7784,
+   "nonEnglishShare": 0.3062,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.139
+    },
+    {
+     "label": "German / West Germanic (incl. Yiddish)",
+     "share": 0.072
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.024
+    }
+   ],
+   "medianIncome": 81363,
+   "annualEnergyCost": 2545,
+   "energyBurden": 0.0313,
+   "eligibleRawAcs": 50143,
+   "enrolledEstimate": 11695,
+   "gap": 9493,
+   "priority": 40
+  },
+  {
+   "puma": "04304",
+   "name": "Brooklyn Community District 4--Bushwick",
+   "borough": "brooklyn",
+   "households": 45491,
+   "avgHouseholdSize": 2.43,
+   "amiLimitUsed": 136566,
+   "eligible": 13794,
+   "snapHouseholds": 10579,
+   "renterShare": 0.8432,
+   "nonEnglishShare": 0.4608,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.352
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.022
+    },
+    {
+     "label": "Chinese",
+     "share": 0.021
+    }
+   ],
+   "medianIncome": 85568,
+   "annualEnergyCost": 2304,
+   "energyBurden": 0.0269,
+   "eligibleRawAcs": 32645,
+   "enrolledEstimate": 6917,
+   "gap": 6877,
+   "priority": 37
+  },
+  {
+   "puma": "04305",
+   "name": "Brooklyn Community District 5--East New York & Cypress Hills",
+   "borough": "brooklyn",
+   "households": 71948,
+   "avgHouseholdSize": 2.72,
+   "amiLimitUsed": 141264,
+   "eligible": 25914,
+   "snapHouseholds": 27108,
+   "renterShare": 0.7601,
+   "nonEnglishShare": 0.431,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.299
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.052
+    },
+    {
+     "label": "Other",
+     "share": 0.027
+    }
+   ],
+   "medianIncome": 55739,
+   "annualEnergyCost": 2690,
+   "energyBurden": 0.0483,
+   "eligibleRawAcs": 61328,
+   "enrolledEstimate": 17260,
+   "gap": 8654,
+   "priority": 49
+  },
+  {
+   "puma": "04306",
+   "name": "Brooklyn Community District 6--Park Slope & Carroll Gardens",
+   "borough": "brooklyn",
+   "households": 52116,
+   "avgHouseholdSize": 2.28,
+   "amiLimitUsed": 134136,
+   "eligible": 9142,
+   "snapHouseholds": 4779,
+   "renterShare": 0.6297,
+   "nonEnglishShare": 0.2171,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.093
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.032
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.027
+    }
+   ],
+   "medianIncome": 170965,
+   "annualEnergyCost": 2373,
+   "energyBurden": 0.0139,
+   "eligibleRawAcs": 21636,
+   "enrolledEstimate": 3289,
+   "gap": 5853,
+   "priority": 18
+  },
+  {
+   "puma": "04307",
+   "name": "Brooklyn Community District 7--Sunset Park & Windsor Terrace",
+   "borough": "brooklyn",
+   "households": 41131,
+   "avgHouseholdSize": 2.87,
+   "amiLimitUsed": 143694,
+   "eligible": 12033,
+   "snapHouseholds": 8102,
+   "renterShare": 0.6838,
+   "nonEnglishShare": 0.626,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.356
+    },
+    {
+     "label": "Chinese",
+     "share": 0.203
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.016
+    }
+   ],
+   "medianIncome": 89890,
+   "annualEnergyCost": 2356,
+   "energyBurden": 0.0262,
+   "eligibleRawAcs": 28477,
+   "enrolledEstimate": 5380,
+   "gap": 6652,
+   "priority": 37
+  },
+  {
+   "puma": "04308",
+   "name": "Brooklyn Community District 8--Crown Heights (North)",
+   "borough": "brooklyn",
+   "households": 48537,
+   "avgHouseholdSize": 2.21,
+   "amiLimitUsed": 133002,
+   "eligible": 13179,
+   "snapHouseholds": 8846,
+   "renterShare": 0.7991,
+   "nonEnglishShare": 0.1962,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.081
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.036
+    },
+    {
+     "label": "Other",
+     "share": 0.015
+    }
+   ],
+   "medianIncome": 91800,
+   "annualEnergyCost": 2172,
+   "energyBurden": 0.0237,
+   "eligibleRawAcs": 31188,
+   "enrolledEstimate": 5877,
+   "gap": 7302,
+   "priority": 29
+  },
+  {
+   "puma": "04309",
+   "name": "Brooklyn Community District 9--Crown Heights (South)",
+   "borough": "brooklyn",
+   "households": 40499,
+   "avgHouseholdSize": 2.37,
+   "amiLimitUsed": 135594,
+   "eligible": 12725,
+   "snapHouseholds": 8788,
+   "renterShare": 0.7995,
+   "nonEnglishShare": 0.2392,
+   "topLanguages": [
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.068
+    },
+    {
+     "label": "Spanish",
+     "share": 0.062
+    },
+    {
+     "label": "Other",
+     "share": 0.042
+    }
+   ],
+   "medianIncome": 77928,
+   "annualEnergyCost": 2138,
+   "energyBurden": 0.0274,
+   "eligibleRawAcs": 30114,
+   "enrolledEstimate": 5818,
+   "gap": 6907,
+   "priority": 31
+  },
+  {
+   "puma": "04310",
+   "name": "Brooklyn Community District 10--Bay Ridge & Dyker Heights",
+   "borough": "brooklyn",
+   "households": 49275,
+   "avgHouseholdSize": 2.51,
+   "amiLimitUsed": 137862,
+   "eligible": 14396,
+   "snapHouseholds": 7126,
+   "renterShare": 0.5964,
+   "nonEnglishShare": 0.5449,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.17
+    },
+    {
+     "label": "Spanish",
+     "share": 0.13
+    },
+    {
+     "label": "Arabic",
+     "share": 0.083
+    }
+   ],
+   "medianIncome": 89272,
+   "annualEnergyCost": 2407,
+   "energyBurden": 0.027,
+   "eligibleRawAcs": 34070,
+   "enrolledEstimate": 4947,
+   "gap": 9449,
+   "priority": 40
+  },
+  {
+   "puma": "04311",
+   "name": "Brooklyn Community District 11--Bensonhurst & Bath Beach",
+   "borough": "brooklyn",
+   "households": 62339,
+   "avgHouseholdSize": 2.89,
+   "amiLimitUsed": 144018,
+   "eligible": 20816,
+   "snapHouseholds": 15610,
+   "renterShare": 0.6554,
+   "nonEnglishShare": 0.7407,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.305
+    },
+    {
+     "label": "Spanish",
+     "share": 0.136
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.121
+    }
+   ],
+   "medianIncome": 68567,
+   "annualEnergyCost": 2448,
+   "energyBurden": 0.0357,
+   "eligibleRawAcs": 49264,
+   "enrolledEstimate": 10233,
+   "gap": 10583,
+   "priority": 52
+  },
+  {
+   "puma": "04312",
+   "name": "Brooklyn Community District 12--Borough Park & Kensington",
+   "borough": "brooklyn",
+   "households": 55111,
+   "avgHouseholdSize": 3.52,
+   "amiLimitUsed": 154224,
+   "eligible": 18988,
+   "snapHouseholds": 16260,
+   "renterShare": 0.6867,
+   "nonEnglishShare": 0.7167,
+   "topLanguages": [
+    {
+     "label": "German / West Germanic (incl. Yiddish)",
+     "share": 0.308
+    },
+    {
+     "label": "Spanish",
+     "share": 0.113
+    },
+    {
+     "label": "Chinese",
+     "share": 0.103
+    }
+   ],
+   "medianIncome": 66966,
+   "annualEnergyCost": 2671,
+   "energyBurden": 0.0399,
+   "eligibleRawAcs": 44937,
+   "enrolledEstimate": 10507,
+   "gap": 8481,
+   "priority": 50
+  },
+  {
+   "puma": "04313",
+   "name": "Brooklyn Community District 13--Coney Island & Brighton Beach",
+   "borough": "brooklyn",
+   "households": 46711,
+   "avgHouseholdSize": 2.34,
+   "amiLimitUsed": 135108,
+   "eligible": 16541,
+   "snapHouseholds": 17593,
+   "renterShare": 0.7258,
+   "nonEnglishShare": 0.6754,
+   "topLanguages": [
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.375
+    },
+    {
+     "label": "Spanish",
+     "share": 0.105
+    },
+    {
+     "label": "Chinese",
+     "share": 0.063
+    }
+   ],
+   "medianIncome": 45806,
+   "annualEnergyCost": 2067,
+   "energyBurden": 0.0451,
+   "eligibleRawAcs": 39146,
+   "enrolledEstimate": 11202,
+   "gap": 5339,
+   "priority": 45
+  },
+  {
+   "puma": "04314",
+   "name": "Brooklyn Community District 14--Flatbush & Midwood",
+   "borough": "brooklyn",
+   "households": 59557,
+   "avgHouseholdSize": 2.57,
+   "amiLimitUsed": 138834,
+   "eligible": 18665,
+   "snapHouseholds": 12615,
+   "renterShare": 0.7608,
+   "nonEnglishShare": 0.4595,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.118
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.083
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.078
+    }
+   ],
+   "medianIncome": 80606,
+   "annualEnergyCost": 2180,
+   "energyBurden": 0.027,
+   "eligibleRawAcs": 44173,
+   "enrolledEstimate": 8374,
+   "gap": 10292,
+   "priority": 43
+  },
+  {
+   "puma": "04315",
+   "name": "Brooklyn Community District 15--Sheepshead Bay & Gravesend (East)",
+   "borough": "brooklyn",
+   "households": 58709,
+   "avgHouseholdSize": 2.57,
+   "amiLimitUsed": 138834,
+   "eligible": 18796,
+   "snapHouseholds": 12266,
+   "renterShare": 0.5485,
+   "nonEnglishShare": 0.6212,
+   "topLanguages": [
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.265
+    },
+    {
+     "label": "Chinese",
+     "share": 0.117
+    },
+    {
+     "label": "Spanish",
+     "share": 0.066
+    }
+   ],
+   "medianIncome": 71850,
+   "annualEnergyCost": 2558,
+   "energyBurden": 0.0356,
+   "eligibleRawAcs": 44483,
+   "enrolledEstimate": 8178,
+   "gap": 10618,
+   "priority": 47
+  },
+  {
+   "puma": "04316",
+   "name": "Brooklyn Community District 16--Ocean Hill & Brownsville",
+   "borough": "brooklyn",
+   "households": 39052,
+   "avgHouseholdSize": 2.45,
+   "amiLimitUsed": 136890,
+   "eligible": 14367,
+   "snapHouseholds": 16418,
+   "renterShare": 0.8415,
+   "nonEnglishShare": 0.2715,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.173
+    },
+    {
+     "label": "Other",
+     "share": 0.031
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.025
+    }
+   ],
+   "medianIncome": 44098,
+   "annualEnergyCost": 2413,
+   "energyBurden": 0.0547,
+   "eligibleRawAcs": 34000,
+   "enrolledEstimate": 10454,
+   "gap": 3913,
+   "priority": 40
+  },
+  {
+   "puma": "04317",
+   "name": "Brooklyn Community District 17--East Flatbush",
+   "borough": "brooklyn",
+   "households": 57133,
+   "avgHouseholdSize": 2.54,
+   "amiLimitUsed": 138348,
+   "eligible": 19153,
+   "snapHouseholds": 12462,
+   "renterShare": 0.6938,
+   "nonEnglishShare": 0.214,
+   "topLanguages": [
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.113
+    },
+    {
+     "label": "Spanish",
+     "share": 0.048
+    },
+    {
+     "label": "Other",
+     "share": 0.019
+    }
+   ],
+   "medianIncome": 70105,
+   "annualEnergyCost": 2613,
+   "energyBurden": 0.0373,
+   "eligibleRawAcs": 45326,
+   "enrolledEstimate": 8312,
+   "gap": 10840,
+   "priority": 42
+  },
+  {
+   "puma": "04318",
+   "name": "Brooklyn Community District 18--Canarsie & Flatlands",
+   "borough": "brooklyn",
+   "households": 63780,
+   "avgHouseholdSize": 2.81,
+   "amiLimitUsed": 142722,
+   "eligible": 19304,
+   "snapHouseholds": 10207,
+   "renterShare": 0.4017,
+   "nonEnglishShare": 0.3189,
+   "topLanguages": [
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.129
+    },
+    {
+     "label": "Spanish",
+     "share": 0.059
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.03
+    }
+   ],
+   "medianIncome": 89779,
+   "annualEnergyCost": 3407,
+   "energyBurden": 0.0379,
+   "eligibleRawAcs": 45686,
+   "enrolledEstimate": 7012,
+   "gap": 12292,
+   "priority": 42
+  },
+  {
+   "puma": "04401",
+   "name": "Queens Community District 1--Astoria & Queensbridge",
+   "borough": "queens",
+   "households": 81743,
+   "avgHouseholdSize": 2.14,
+   "amiLimitUsed": 131868,
+   "eligible": 22863,
+   "snapHouseholds": 10719,
+   "renterShare": 0.811,
+   "nonEnglishShare": 0.5086,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.201
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.15
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.036
+    }
+   ],
+   "medianIncome": 89683,
+   "annualEnergyCost": 2132,
+   "energyBurden": 0.0238,
+   "eligibleRawAcs": 54108,
+   "enrolledEstimate": 7510,
+   "gap": 15353,
+   "priority": 54
+  },
+  {
+   "puma": "04402",
+   "name": "Queens Community District 2--Long Island City, Sunnyside, & Woodside",
+   "borough": "queens",
+   "households": 55711,
+   "avgHouseholdSize": 2.21,
+   "amiLimitUsed": 133002,
+   "eligible": 15194,
+   "snapHouseholds": 5171,
+   "renterShare": 0.757,
+   "nonEnglishShare": 0.6354,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.26
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.135
+    },
+    {
+     "label": "Chinese",
+     "share": 0.076
+    }
+   ],
+   "medianIncome": 95141,
+   "annualEnergyCost": 1955,
+   "energyBurden": 0.0205,
+   "eligibleRawAcs": 35958,
+   "enrolledEstimate": 3858,
+   "gap": 11336,
+   "priority": 46
+  },
+  {
+   "puma": "04403",
+   "name": "Queens Community District 3--Jackson Heights & East Elmhurst",
+   "borough": "queens",
+   "households": 53966,
+   "avgHouseholdSize": 2.95,
+   "amiLimitUsed": 144990,
+   "eligible": 17932,
+   "snapHouseholds": 11379,
+   "renterShare": 0.6262,
+   "nonEnglishShare": 0.7762,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.571
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.097
+    },
+    {
+     "label": "Chinese",
+     "share": 0.043
+    }
+   ],
+   "medianIncome": 78474,
+   "annualEnergyCost": 2309,
+   "energyBurden": 0.0294,
+   "eligibleRawAcs": 42438,
+   "enrolledEstimate": 7615,
+   "gap": 10317,
+   "priority": 49
+  },
+  {
+   "puma": "04404",
+   "name": "Queens Community District 4--Elmhurst & Corona",
+   "borough": "queens",
+   "households": 53471,
+   "avgHouseholdSize": 3.1,
+   "amiLimitUsed": 147420,
+   "eligible": 18985,
+   "snapHouseholds": 13884,
+   "renterShare": 0.7462,
+   "nonEnglishShare": 0.835,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.484
+    },
+    {
+     "label": "Chinese",
+     "share": 0.117
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.1
+    }
+   ],
+   "medianIncome": 71309,
+   "annualEnergyCost": 2126,
+   "energyBurden": 0.0298,
+   "eligibleRawAcs": 44929,
+   "enrolledEstimate": 9128,
+   "gap": 9857,
+   "priority": 52
+  },
+  {
+   "puma": "04405",
+   "name": "Queens Community District 5--Ridgewood, Maspeth, & Middle Village",
+   "borough": "queens",
+   "households": 65718,
+   "avgHouseholdSize": 2.68,
+   "amiLimitUsed": 140616,
+   "eligible": 19797,
+   "snapHouseholds": 8065,
+   "renterShare": 0.5809,
+   "nonEnglishShare": 0.5707,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.293
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.104
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.077
+    }
+   ],
+   "medianIncome": 88685,
+   "annualEnergyCost": 2700,
+   "energyBurden": 0.0304,
+   "eligibleRawAcs": 46852,
+   "enrolledEstimate": 5797,
+   "gap": 14000,
+   "priority": 52
+  },
+  {
+   "puma": "04406",
+   "name": "Queens Community District 6--Forest Hills & Rego Park",
+   "borough": "queens",
+   "households": 53629,
+   "avgHouseholdSize": 2.29,
+   "amiLimitUsed": 134298,
+   "eligible": 14467,
+   "snapHouseholds": 6720,
+   "renterShare": 0.5231,
+   "nonEnglishShare": 0.6127,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.148
+    },
+    {
+     "label": "Chinese",
+     "share": 0.132
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.131
+    }
+   ],
+   "medianIncome": 99373,
+   "annualEnergyCost": 2003,
+   "energyBurden": 0.0202,
+   "eligibleRawAcs": 34238,
+   "enrolledEstimate": 4716,
+   "gap": 9751,
+   "priority": 37
+  },
+  {
+   "puma": "04407",
+   "name": "Queens Community District 7--Flushing, Murray Hill, & Whitestone",
+   "borough": "queens",
+   "households": 94645,
+   "avgHouseholdSize": 2.6,
+   "amiLimitUsed": 139320,
+   "eligible": 30275,
+   "snapHouseholds": 13506,
+   "renterShare": 0.496,
+   "nonEnglishShare": 0.7168,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.368
+    },
+    {
+     "label": "Spanish",
+     "share": 0.155
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.076
+    }
+   ],
+   "medianIncome": 72104,
+   "annualEnergyCost": 2614,
+   "energyBurden": 0.0362,
+   "eligibleRawAcs": 71649,
+   "enrolledEstimate": 9546,
+   "gap": 20729,
+   "priority": 71
+  },
+  {
+   "puma": "04408",
+   "name": "Queens Community District 8--Fresh Meadows, Hillcrest, & Briarwood",
+   "borough": "queens",
+   "households": 56247,
+   "avgHouseholdSize": 2.59,
+   "amiLimitUsed": 139158,
+   "eligible": 17189,
+   "snapHouseholds": 8500,
+   "renterShare": 0.519,
+   "nonEnglishShare": 0.5802,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.154
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.124
+    },
+    {
+     "label": "Chinese",
+     "share": 0.116
+    }
+   ],
+   "medianIncome": 86709,
+   "annualEnergyCost": 2466,
+   "energyBurden": 0.0284,
+   "eligibleRawAcs": 40679,
+   "enrolledEstimate": 5902,
+   "gap": 11286,
+   "priority": 44
+  },
+  {
+   "puma": "04409",
+   "name": "Queens Community District 9--Kew Gardens, Richmond Hill, & Woodhaven",
+   "borough": "queens",
+   "households": 46765,
+   "avgHouseholdSize": 3.11,
+   "amiLimitUsed": 147582,
+   "eligible": 14670,
+   "snapHouseholds": 8248,
+   "renterShare": 0.5007,
+   "nonEnglishShare": 0.6181,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.338
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.151
+    },
+    {
+     "label": "Chinese",
+     "share": 0.049
+    }
+   ],
+   "medianIncome": 87192,
+   "annualEnergyCost": 2904,
+   "energyBurden": 0.0333,
+   "eligibleRawAcs": 34718,
+   "enrolledEstimate": 5614,
+   "gap": 9056,
+   "priority": 42
+  },
+  {
+   "puma": "04410",
+   "name": "Queens Community District 10--South Ozone Park & Howard Beach",
+   "borough": "queens",
+   "households": 41712,
+   "avgHouseholdSize": 3.24,
+   "amiLimitUsed": 149688,
+   "eligible": 12651,
+   "snapHouseholds": 7327,
+   "renterShare": 0.312,
+   "nonEnglishShare": 0.371,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.194
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.117
+    },
+    {
+     "label": "Chinese",
+     "share": 0.017
+    }
+   ],
+   "medianIncome": 97239,
+   "annualEnergyCost": 3500,
+   "energyBurden": 0.036,
+   "eligibleRawAcs": 29939,
+   "enrolledEstimate": 4966,
+   "gap": 7685,
+   "priority": 30
+  },
+  {
+   "puma": "04411",
+   "name": "Queens Community District 11--Auburndale, Bayside, & Douglaston",
+   "borough": "queens",
+   "households": 45292,
+   "avgHouseholdSize": 2.63,
+   "amiLimitUsed": 139806,
+   "eligible": 12087,
+   "snapHouseholds": 3708,
+   "renterShare": 0.3113,
+   "nonEnglishShare": 0.5816,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.251
+    },
+    {
+     "label": "Spanish",
+     "share": 0.093
+    },
+    {
+     "label": "Korean",
+     "share": 0.09
+    }
+   ],
+   "medianIncome": 106192,
+   "annualEnergyCost": 3142,
+   "energyBurden": 0.0296,
+   "eligibleRawAcs": 28606,
+   "enrolledEstimate": 2834,
+   "gap": 9254,
+   "priority": 36
+  },
+  {
+   "puma": "04412",
+   "name": "Queens Community District 12--Jamaica, St. Albans, & Hollis",
+   "borough": "queens",
+   "households": 80302,
+   "avgHouseholdSize": 3.1,
+   "amiLimitUsed": 147420,
+   "eligible": 26746,
+   "snapHouseholds": 16314,
+   "renterShare": 0.5267,
+   "nonEnglishShare": 0.3414,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.147
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.108
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.046
+    }
+   ],
+   "medianIncome": 77558,
+   "annualEnergyCost": 3231,
+   "energyBurden": 0.0417,
+   "eligibleRawAcs": 63296,
+   "enrolledEstimate": 10976,
+   "gap": 15770,
+   "priority": 55
+  },
+  {
+   "puma": "04413",
+   "name": "Queens Community District 13--Queens Village, Bellerose, & Rosedale",
+   "borough": "queens",
+   "households": 65099,
+   "avgHouseholdSize": 3.08,
+   "amiLimitUsed": 147096,
+   "eligible": 17958,
+   "snapHouseholds": 7996,
+   "renterShare": 0.2684,
+   "nonEnglishShare": 0.3576,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.105
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.101
+    },
+    {
+     "label": "French / Haitian Creole",
+     "share": 0.072
+    }
+   ],
+   "medianIncome": 109756,
+   "annualEnergyCost": 3482,
+   "energyBurden": 0.0317,
+   "eligibleRawAcs": 42498,
+   "enrolledEstimate": 5653,
+   "gap": 12304,
+   "priority": 37
+  },
+  {
+   "puma": "04414",
+   "name": "Queens Community District 14--The Rockaways",
+   "borough": "queens",
+   "households": 46703,
+   "avgHouseholdSize": 2.69,
+   "amiLimitUsed": 140778,
+   "eligible": 15223,
+   "snapHouseholds": 12354,
+   "renterShare": 0.6186,
+   "nonEnglishShare": 0.296,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.173
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.029
+    },
+    {
+     "label": "Other",
+     "share": 0.027
+    }
+   ],
+   "medianIncome": 67413,
+   "annualEnergyCost": 2808,
+   "energyBurden": 0.0417,
+   "eligibleRawAcs": 36027,
+   "enrolledEstimate": 8028,
+   "gap": 7195,
+   "priority": 37
+  },
+  {
+   "puma": "04501",
+   "name": "Staten Island Community District 1--North Shore",
+   "borough": "staten_island",
+   "households": 63271,
+   "avgHouseholdSize": 2.83,
+   "amiLimitUsed": 143046,
+   "eligible": 19162,
+   "snapHouseholds": 12671,
+   "renterShare": 0.4393,
+   "nonEnglishShare": 0.3911,
+   "topLanguages": [
+    {
+     "label": "Spanish",
+     "share": 0.193
+    },
+    {
+     "label": "Other Indo-European (incl. Bengali)",
+     "share": 0.054
+    },
+    {
+     "label": "Chinese",
+     "share": 0.048
+    }
+   ],
+   "medianIncome": 86689,
+   "annualEnergyCost": 3396,
+   "energyBurden": 0.0392,
+   "eligibleRawAcs": 45347,
+   "enrolledEstimate": 8434,
+   "gap": 10727,
+   "priority": 42
+  },
+  {
+   "puma": "04502",
+   "name": "Staten Island Community District 2--Mid-Island",
+   "borough": "staten_island",
+   "households": 48319,
+   "avgHouseholdSize": 2.87,
+   "amiLimitUsed": 143694,
+   "eligible": 14092,
+   "snapHouseholds": 5644,
+   "renterShare": 0.3069,
+   "nonEnglishShare": 0.4513,
+   "topLanguages": [
+    {
+     "label": "Chinese",
+     "share": 0.119
+    },
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.079
+    },
+    {
+     "label": "Spanish",
+     "share": 0.075
+    }
+   ],
+   "medianIncome": 92961,
+   "annualEnergyCost": 3578,
+   "energyBurden": 0.0385,
+   "eligibleRawAcs": 33349,
+   "enrolledEstimate": 4070,
+   "gap": 10021,
+   "priority": 39
+  },
+  {
+   "puma": "04503",
+   "name": "Staten Island Community District 3--South Shore",
+   "borough": "staten_island",
+   "households": 59187,
+   "avgHouseholdSize": 2.87,
+   "amiLimitUsed": 143694,
+   "eligible": 15076,
+   "snapHouseholds": 4488,
+   "renterShare": 0.2106,
+   "nonEnglishShare": 0.2762,
+   "topLanguages": [
+    {
+     "label": "Russian / Polish / Slavic",
+     "share": 0.084
+    },
+    {
+     "label": "Chinese",
+     "share": 0.052
+    },
+    {
+     "label": "Spanish",
+     "share": 0.05
+    }
+   ],
+   "medianIncome": 114562,
+   "annualEnergyCost": 3893,
+   "energyBurden": 0.034,
+   "eligibleRawAcs": 35680,
+   "enrolledEstimate": 3455,
+   "gap": 11621,
+   "priority": 34
+  }
+ ]
+}
