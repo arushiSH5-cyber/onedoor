@@ -120,7 +120,7 @@ export function handleSms(prev: SmsState | null, text: string, opts: { now?: num
     case "bill":
       if (!(n >= 1 && n <= 3)) return invalid();
       s.bill = (["me", "other", "landlord"] as const)[n - 1];
-      if (s.bill === "landlord") return finish(s, now, opts);
+      if (s.bill === "landlord") return finish(s, now);
       s.step = "size";
       break;
     case "size":
@@ -148,7 +148,7 @@ export function handleSms(prev: SmsState | null, text: string, opts: { now?: num
     case "heat":
       if (!(n >= 1 && n <= 4)) return invalid();
       s.heat = HEATS[n - 1];
-      return finish(s, now, opts);
+      return finish(s, now);
     case "consent":
       if (YES.test(body)) {
         s.ref = opts.makeRef();
@@ -164,7 +164,7 @@ export function handleSms(prev: SmsState | null, text: string, opts: { now?: num
   return { state: s, replies: [prompt(s)] };
 }
 
-function finish(s: SmsState, now: number, _opts: { makeRef: () => string }): SmsOutcome {
+function finish(s: SmsState, now: number): SmsOutcome {
   const input = toInput(s);
   const result = screen(input);
   const secs = Math.max(1, Math.round((now - s.startedAt) / 1000));

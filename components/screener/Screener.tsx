@@ -53,6 +53,12 @@ export function Screener() {
     headingRef.current?.focus();
   }, [step]);
 
+  // /check?demo=rosa|harlem|senior opens a demo persona directly (used by the landing page and demo video).
+  useEffect(() => {
+    const demo = new URLSearchParams(window.location.search).get("demo");
+    if (demo && demo in PERSONAS) loadPersona(demo as keyof typeof PERSONAS);
+  }, []);
+
   const touch = () => setStartedAt((s) => s ?? Date.now());
   const update = (patch: Partial<FormState>) => {
     touch();

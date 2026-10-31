@@ -19,8 +19,8 @@ export const viewport: Viewport = { themeColor: "#0f4c5c", width: "device-width"
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${display.variable} ${body.variable} min-h-screen`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="min-h-screen">
         <LangProvider>
           <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-[2000] focus:m-2 focus:rounded focus:bg-paper focus:p-2">
             Skip to content
