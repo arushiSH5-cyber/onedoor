@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TranslatePage } from "@/components/TranslatePage";
 import { ALL_RULES, LAST_VERIFIED } from "@/lib/rules/config";
 import { ASSUMPTIONS } from "@/lib/impact/model";
 import { REFS } from "@/lib/content/references";
@@ -36,6 +37,7 @@ export default function MethodsPage() {
   const a = gapModel.assumptions;
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:py-10">
+      <TranslatePage />
       <p className="eyebrow">Every dataset, formula and assumption</p>
       <h1 className="h1">Data &amp; sources</h1>
 

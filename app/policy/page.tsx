@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TranslatePage } from "@/components/TranslatePage";
 import Link from "next/link";
 import { PlaybookBuilder } from "@/components/policy/PlaybookBuilder";
 
@@ -67,6 +68,7 @@ const COMPARE = [
 export default function PolicyPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
+      <TranslatePage />
       <p className="eyebrow">Deliverables: enrollment design · legal pathway · outreach plan · replication playbook</p>
       <h1 className="h1">From “please apply” to “you&apos;re already in”</h1>
       <p className="mt-2 max-w-3xl text-muted">
