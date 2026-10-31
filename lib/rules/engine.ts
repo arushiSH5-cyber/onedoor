@@ -198,7 +198,8 @@ export function screen(input: ScreenerInput): ScreenerResult {
   const qualifyingMembers = members.filter((m) => m.benefits.some(isQualifying));
   if (qualifyingMembers.length > 0) {
     const holderBenefits = billHolder ? billHolder.benefits.filter(isQualifying) : [];
-    const householdLink = holderBenefits.length === 0;
+    // Unknown bill holder: we can't claim a mismatch, so no Household Link flag.
+    const householdLink = billHolder !== undefined && holderBenefits.length === 0;
     const allBenefits = qualifyingMembers.flatMap((m) => m.benefits.filter(isQualifying));
     const best = bestOf(allBenefits)!;
 
@@ -207,7 +208,7 @@ export function screen(input: ScreenerInput): ScreenerResult {
     const enrollment: Enrollment = holderAuto ? "LIKELY_AUTO" : "MUST_APPLY";
     const tier: Tier = allBenefits.includes("HRA_UTILITY_PAY") ? 4 : 1;
 
-    const recipient = householdLink ? qualifyingMembers[0] : billHolder!;
+    const recipient = householdLink || !billHolder ? qualifyingMembers[0] : billHolder;
     const recipientBenefit = bestOf(recipient.benefits.filter(isQualifying))!;
 
     const why: Msg[] = [

@@ -164,3 +164,12 @@ describe("edge cases", () => {
     expect(r.enrollment).toBe("MUST_APPLY");
   });
 });
+
+describe("unknown bill holder", () => {
+  it("does not flag a Household Link and asks the household to apply", () => {
+    const r = screen(base({ members: [self({ isBillHolder: false, benefits: ["SNAP"] })] }));
+    expect(r.pathway).toBe("EAP");
+    expect(r.householdLink).toBe(false);
+    expect(r.enrollment).toBe("MUST_APPLY");
+  });
+});
