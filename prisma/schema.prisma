@@ -1,0 +1,36 @@
+// Local dev: SQLite. For Postgres (Vercel + Neon), `scripts/prisma-provider.mjs`
+// switches the provider automatically when DATABASE_URL starts with postgres.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// One anonymized screening. No names, addresses, SSNs, or exact income.
+model Screening {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  borough        String?
+  zip3           String?
+  language       String
+  inputMode      String // form | text | sms
+  householdSize  Int
+  incomeBracket  String // under60 | 60to80 | 80to100 | over100 | unknown
+  benefits       String // comma-separated benefit codes present in the household
+  pathway        String
+  householdLink  Boolean
+  consentGiven   Boolean  @default(false)
+  completionSecs Int
+  isDemoSeed     Boolean  @default(false)
+  consentRef     String?  @unique
+}
+
+/// Conversation state for the SMS flow (simulator + Twilio). Phone is stored hashed.
+model SmsSession {
+  id        String   @id
+  state     String
+  updatedAt DateTime @updatedAt
+}

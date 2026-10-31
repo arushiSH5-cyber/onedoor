@@ -4,9 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/prisma-provider.mjs && prisma generate && (prisma db push --skip-generate || echo '[build] db push skipped') && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "postinstall": "node scripts/prisma-provider.mjs && prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
